@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { TodoService } from 'src/app/_services/data/todo.service';
 import { Observable } from 'rxjs';
 import { Todo } from 'src/app/_models/todo';
+import { MessageService } from 'primeng/api';
+import { Message } from '@angular/compiler/src/i18n/i18n_ast';
 
 @Component({
   selector: 'app-todos',
@@ -14,10 +16,24 @@ export class TodosComponent implements OnInit {
   }
 
   constructor(
-    private todoService: TodoService
+    private todoService: TodoService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
   }
 
+  delete(todo: Todo) {
+    this.todoService.delete(todo.id).subscribe(
+      response => this.messageService.add({
+        severity: 'success',
+        summary: 'deleted successfuly'
+      }),
+      error => this.messageService.add({
+        severity: 'success',
+        summary: 'deleted failed',
+        detail: error
+      }),
+    );
+  }
 }
