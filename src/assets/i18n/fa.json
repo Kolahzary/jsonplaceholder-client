@@ -1,0 +1,12 @@
+{
+  "header-title": "نمونه کلاینت وبسایت جی‌سون پلیس‌هولدر",
+
+  "logger-request-sent": "درخواست به سرور ارسال شد",
+  "logger-request-success": "دریافت نتیجه موفقیت آمیز بود",
+
+  "todo-toggle-success": "تغییر وضعیت با موفقیت انجام شد",
+  "todo-toggle-failed": "تغییر وضعیت با شکست مواجه شد",
+
+  "todo-delete-success": "حذف با موفقیت انجام شد",
+  "todo-delete-failed": "حذف با شکست مواجه شد"
+}

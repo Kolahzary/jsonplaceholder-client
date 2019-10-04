@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Todo } from 'src/app/_models/todo';
 import { MessageService } from 'primeng/api';
 import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-todos',
@@ -17,7 +18,8 @@ export class TodosComponent implements OnInit {
 
   constructor(
     private todoService: TodoService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private translocoService: TranslocoService
   ) { }
 
   ngOnInit() {
@@ -27,11 +29,11 @@ export class TodosComponent implements OnInit {
     this.todoService.delete(todo.id).subscribe(
       response => this.messageService.add({
         severity: 'success',
-        summary: 'deleted successfully'
+        summary: this.translocoService.translate('todo-toggle-success'),
       }),
       error => this.messageService.add({
         severity: 'success',
-        summary: 'deleted failed',
+        summary: this.translocoService.translate('todo-delete-failed'),
         detail: error
       }),
     );
@@ -41,11 +43,11 @@ export class TodosComponent implements OnInit {
     this.todoService.toggle(todo.id).subscribe(
       response => this.messageService.add({
         severity: 'success',
-        summary: 'toggle successful'
+        summary: this.translocoService.translate('todo-toggle-success'),
       }),
       error => this.messageService.add({
         severity: 'success',
-        summary: 'toggle failed',
+        summary: this.translocoService.translate('todo-toggle-failed'),
         detail: error
       }),
     );

@@ -1,0 +1,12 @@
+{
+  "header-title": "JSON Placeholder Sample Client",
+
+  "logger-request-sent": "Http Request Sent",
+  "logger-request-success": "Http Request Success",
+
+  "todo-toggle-success": "Toggle successful",
+  "todo-toggle-failed": "Toggle failed",
+
+  "todo-delete-success": "Delete successful",
+  "todo-delete-failed": "Delete failed"
+}

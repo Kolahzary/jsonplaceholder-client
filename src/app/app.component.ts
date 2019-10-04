@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,23 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'todos';
+  countries: any[];
+
+  set selectedCountry(value: any) {
+    console.log(value);
+    this.translocoService.setActiveLang(value.lang);
+  }
+  get selectedCountry() {
+    return null;
+  }
+
+  constructor(private translocoService: TranslocoService) {
+    this.countries = [
+      { name: 'English', flag: 'us.svg', lang: 'en' },
+      { name: 'Persian', flag: 'ir.svg', lang: 'fa' },
+    ];
+  }
+
+  setLocale() {
+  }
 }

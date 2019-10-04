@@ -1,7 +1,16 @@
 <header>
-  <h2>JSON Placeholder Sample Client</h2>
+  <h2>{{'header-title' | transloco}}</h2>
+  <p-selectButton [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">
+    <ng-template let-item>
+      <div style="padding: .5em 1em">
+        <img style="vertical-align: middle; margin-right: .5em" src="assets/images/flag/{{item.value.flag}}"
+          height="20px" />
+        <span>{{item.name}}</span>
+      </div>
+    </ng-template>
+  </p-selectButton>
 </header>
 
 <router-outlet></router-outlet>
 
-<p-toast position="bottom-right" ></p-toast>
+<p-toast position="bottom-right"></p-toast>

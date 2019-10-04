@@ -4,11 +4,13 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 import { MessageService } from 'primeng/components/common/messageservice';
+import { TranslocoService } from '@ngneat/transloco';
 
 @Injectable()
 export class LoggerInterceptor implements HttpInterceptor {
   constructor(
-    private messageService: MessageService
+    private messageService: MessageService,
+    private translocoService: TranslocoService
   ) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -17,15 +19,13 @@ export class LoggerInterceptor implements HttpInterceptor {
         if (event.type == 0) {
           this.messageService.add({
             severity:'info',
-            summary:'Http Request Sent' });
+            summary: this.translocoService.translate('logger-request-sent')});
         }
         if (event instanceof HttpResponse) {
           this.messageService.add({
             severity:'info',
-            summary:'Http Request Success',
+            summary: this.translocoService.translate('logger-request-success'),
             detail: event.url});
-
-            console.log(['http success response', event])
           }
       }),
       catchError((event: HttpEvent<any>) => {
