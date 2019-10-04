@@ -7,3 +7,55 @@ body {
 * {
   box-sizing: border-box;
 }
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 0 8px 0 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  user-select: none;
+}
+ul li div {
+  padding: 12px 0;
+}
+
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+ul li:hover {
+  background: #ddd;
+}
+
+ul li.completed {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+
+.delete {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.delete:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.check {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.75em;
+}

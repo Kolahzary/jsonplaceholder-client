@@ -1,5 +1,6 @@
 <ul>
-  <li  [ngClass]="{'completed': todo.completed}" *ngFor="let todo of todos$|async">
+  <li [ngClass]="{'completed': todo.completed}" *ngFor="let todo of todos$|async">
+    <span *ngIf="todo.completed" class="check"><i class="pi pi-check"></i></span>
     <div (click)="toggle(todo)">{{ todo.title }}</div>
     <span class="delete" (click)="delete(todo)">×</span>
   </li>
