@@ -59,3 +59,14 @@ ul li.completed {
   top: 0;
   font-size: 1.75em;
 }
+
+.ui-rtl {
+  direction: rtl;
+}
+.ui-ltr {
+  direction: ltr;
+}
+
+.ui-rtl ul li div {
+  padding: 12px 42px 12px 0;
+}

@@ -13,7 +13,7 @@ import { TranslocoService } from '@ngneat/transloco';
 })
 export class TodosComponent implements OnInit {
   get todos$(): Observable<Todo[]> {
-    return this.todoService.getAll();
+    return this.todoService.getAllFiltered();
   }
 
   constructor(

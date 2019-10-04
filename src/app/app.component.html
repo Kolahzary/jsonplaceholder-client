@@ -1,4 +1,4 @@
-<div [ngClass]="{'ltr': ltr$ | async, 'rtl': !(ltr$ | async)}">
+<div [ngClass]="{'ui-ltr': ltr$ | async, 'ui-rtl': !(ltr$ | async)}" dir="{{(ltr$ | async) ? 'ltr': 'rtl'}}">
   <header>
     <h2>{{'header-title' | transloco}}</h2>
     <p-selectButton [options]="countries" [(ngModel)]="selectedCountry" optionLabel="name">
@@ -10,6 +10,10 @@
         </div>
       </ng-template>
     </p-selectButton>
+
+    <app-todo-form style="float: left;"></app-todo-form>
+    <app-todo-filter style="float: right;"></app-todo-filter>
+
   </header>
 
   <router-outlet></router-outlet>

@@ -30,6 +30,12 @@ export class LoggerInterceptor implements HttpInterceptor {
       }),
       catchError((event: HttpEvent<any>) => {
         if (event instanceof HttpErrorResponse) {
+
+          this.messageService.add({
+            severity:'info',
+            summary: this.translocoService.translate('logger-request-failed'),
+            detail: event.url});
+
           console.log(['http error response', event]);
           if (event.status === 0) {
             return throwError('Could not connect to server');
@@ -41,6 +47,7 @@ export class LoggerInterceptor implements HttpInterceptor {
           if (event.error === null) {
             return throwError(event.statusText);
           }
+
         }
       }));
   }

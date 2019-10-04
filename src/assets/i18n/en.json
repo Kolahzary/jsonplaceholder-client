@@ -3,10 +3,17 @@
 
   "logger-request-sent": "Http Request Sent",
   "logger-request-success": "Http Request Success",
+  "logger-request-failed": "Http Request Failed",
 
   "todo-toggle-success": "Toggle successful",
   "todo-toggle-failed": "Toggle failed",
 
   "todo-delete-success": "Delete successful",
-  "todo-delete-failed": "Delete failed"
+  "todo-delete-failed": "Delete failed",
+
+  "todo-add-success": "Add successful",
+  "todo-add-failed": "Add failed",
+
+  "filter": "Filter",
+  "add": "Add"
 }

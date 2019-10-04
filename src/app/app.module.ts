@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { ToastModule } from 'primeng/toast';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { MessageService } from 'primeng/api';
 import { translocoLoader } from './transloco.loader';
@@ -17,14 +19,16 @@ import { environment } from '../environments/environment';
 
 import {
   TodosComponent,
-  TodoFormComponent } from './panel';
+  TodoFormComponent,
+  TodoFilterComponent } from './panel';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     TodosComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TodoFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     ToastModule,
     SelectButtonModule,
+    InputTextModule,
+    ButtonModule,
     TranslocoModule
   ],
   providers: [

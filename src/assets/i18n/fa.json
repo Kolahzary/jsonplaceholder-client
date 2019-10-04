@@ -3,10 +3,17 @@
 
   "logger-request-sent": "درخواست به سرور ارسال شد",
   "logger-request-success": "دریافت نتیجه موفقیت آمیز بود",
+  "logger-request-failed": "نتیجه ناموفق از سرور دریافت شد",
 
   "todo-toggle-success": "تغییر وضعیت با موفقیت انجام شد",
   "todo-toggle-failed": "تغییر وضعیت با شکست مواجه شد",
 
   "todo-delete-success": "حذف با موفقیت انجام شد",
-  "todo-delete-failed": "حذف با شکست مواجه شد"
+  "todo-delete-failed": "حذف با شکست مواجه شد",
+
+  "todo-add-success": "با موفقیت اضافه شد",
+  "todo-add-failed": "عملیات افزودن با شکست مواجه شد",
+
+  "filter": "یافتن",
+  "add": "افزودن"
 }
