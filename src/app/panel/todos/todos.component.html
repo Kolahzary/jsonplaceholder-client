@@ -1,6 +1,6 @@
 <ul>
-  <li [ngClass]="{'completed': todo.completed}" *ngFor="let todo of todos$|async">
-    {{ todo.title }}
+  <li  [ngClass]="{'completed': todo.completed}" *ngFor="let todo of todos$|async">
+    <div (click)="toggle(todo)">{{ todo.title }}</div>
     <span class="delete" (click)="delete(todo)">×</span>
   </li>
 </ul>

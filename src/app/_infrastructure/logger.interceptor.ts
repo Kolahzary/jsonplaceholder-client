@@ -14,10 +14,15 @@ export class LoggerInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(
       tap((event: HttpEvent<any>) => {
+        if (event.type == 0) {
+          this.messageService.add({
+            severity:'info',
+            summary:'Http Request Sent' });
+        }
         if (event instanceof HttpResponse) {
           this.messageService.add({
             severity:'info',
-            summary:'Http Call Success',
+            summary:'Http Request Success',
             detail: event.url});
 
             console.log(['http success response', event])

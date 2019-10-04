@@ -27,7 +27,7 @@ export class TodosComponent implements OnInit {
     this.todoService.delete(todo.id).subscribe(
       response => this.messageService.add({
         severity: 'success',
-        summary: 'deleted successfuly'
+        summary: 'deleted successfully'
       }),
       error => this.messageService.add({
         severity: 'success',
@@ -36,4 +36,20 @@ export class TodosComponent implements OnInit {
       }),
     );
   }
+
+  toggle(todo: Todo) {
+    this.todoService.toggle(todo.id).subscribe(
+      response => this.messageService.add({
+        severity: 'success',
+        summary: 'toggle successful'
+      }),
+      error => this.messageService.add({
+        severity: 'success',
+        summary: 'toggle failed',
+        detail: error
+      }),
+    );
+  }
+
+
 }
