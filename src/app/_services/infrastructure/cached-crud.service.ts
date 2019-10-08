@@ -21,7 +21,7 @@ export class CachedCrudService<T extends IModel> extends CachedReadableService<T
           data.push(created);
           return data;
         }
-      ));
+      )).pipe(shareReplay(1));
     } else {
       this.singleCache$.set(created.id, of(created).pipe(shareReplay(1)));
     }
@@ -42,7 +42,7 @@ export class CachedCrudService<T extends IModel> extends CachedReadableService<T
             }
           );
         }
-      ));
+      )).pipe(shareReplay(1));
     } else {
       this.singleCache$.set(updated.id, of(updated).pipe(shareReplay(1)));
     }
@@ -55,7 +55,7 @@ export class CachedCrudService<T extends IModel> extends CachedReadableService<T
         data => {
           return data.filter(x => x.id !== id);
         }
-      ));
+      )).pipe(shareReplay(1));
     }
     if (this.singleCache$.has(id)) {
       this.singleCache$.delete(id);
